@@ -55,11 +55,11 @@ migrate:
 .PHONY: test
 test:
 	$(call log, running tests)
-	pytest "$(DIR_SRC)"
+	$(RUN) pytest "$(DIR_SRC)"
 
 
 .PHONY: cov
 cov:
 	$(call log, running tests)
-	pytest "$(DIR_SRC)" --cov
+	$(RUN) pytest "$(DIR_SRC)" --cov
 
