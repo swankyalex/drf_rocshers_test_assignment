@@ -48,6 +48,10 @@ jobs:
       run: |
         python -m poetry run flake8 src
 
+    - name: Make static
+      run: |
+         make static
+
     - name: Testing with pytest
       run: |
         make test
