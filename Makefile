@@ -15,6 +15,11 @@ run:
 	$(call log, starting local web server)
 	$(PYTHON) src/manage.py runserver
 
+.PHONY: run-prod
+run-prod:
+	$(call log, starting local web server)
+	$(PYTHON) src/manage.py runserver 0.0.0.0:8000
+
 
 .PHONY: sh
 sh:
@@ -50,6 +55,12 @@ migrations:
 migrate:
 	$(call log, applying migrations)
 	$(PYTHON) src/manage.py migrate
+
+
+PHONY: static
+static:
+	$(call log, collecting static)
+	$(PYTHON) src/manage.py collectstatic
 
 
 .PHONY: test

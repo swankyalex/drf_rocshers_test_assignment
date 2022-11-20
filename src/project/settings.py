@@ -44,6 +44,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -66,8 +67,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project.wsgi.application"
 
+DATABASE_URL = os.getenv("DATABASE_URL", _ds.DATABASE_URL)
 
-DATABASES = {"default": dj_database_url.parse(_ds.DATABASE_URL)}
+DATABASES = {"default": dj_database_url.parse(DATABASE_URL)}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -104,6 +106,8 @@ USE_TZ = False
 
 STATIC_URL = "/static/"
 
+STATIC_ROOT = DIR_REPO / ".static"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -111,6 +115,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
 }
 
 SPECTACULAR_SETTINGS = {

@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+
+  db:
+    container_name: space-db
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: space-db
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+    ports:
+      - 5555:5432
+
+  web:
+    build: ./
+    ports:
+      - "8000:8000"
+    entrypoint: [make, migrate, static, run-prod]
+    environment:
+      ENV_FOR_DYNACONF: docker
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
