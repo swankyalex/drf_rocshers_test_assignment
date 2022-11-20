@@ -14,9 +14,7 @@ default:
   DIRS_TEMPLATES:
     - src/project/templates/
   HOST: ""
-  DOMAIN_NAME: "http://localhost:8000/"
   MODE_DEBUG: true
-  MODE_PROFILING: false
   PORT: -1
   PROJECT_NAME: ""
   SECRET_KEY: ""
