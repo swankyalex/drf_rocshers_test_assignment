@@ -15,6 +15,11 @@ run:
 	$(call log, starting local web server)
 	$(PYTHON) src/manage.py runserver
 
+.PHONY: run-prod
+run-prod:
+	$(call log, starting local web server)
+	$(PYTHON) src/manage.py runserver 0.0.0.0:8000
+
 
 .PHONY: sh
 sh:
@@ -52,6 +57,12 @@ migrate:
 	$(PYTHON) src/manage.py migrate
 
 
+PHONY: static
+static:
+	$(call log, collecting static)
+	$(PYTHON) src/manage.py collectstatic
+
+
 .PHONY: test
 test:
 	$(call log, running tests)
@@ -63,3 +74,19 @@ cov:
 	$(call log, running tests)
 	$(RUN) pytest "$(DIR_SRC)" --cov
 
+
+.PHONY: docker-up
+docker-up:
+	$(call log, running docker)
+	docker-compose up -d
+
+.PHONY: docker-down
+docker-down:
+	$(call log, running docker)
+	docker-compose down
+
+
+.PHONY: docker-build
+docker-build:
+	$(call log, running docker)
+	docker-compose up -d --build
