@@ -61,11 +61,11 @@ poetry install # или poetry install --with dev (для зависимосте
 ```
 4. Примените миграции:
 ```sh
-poetry run python src/manage.py makemigrations
+poetry run python src/manage.py migrate
 ```
 либо
 ```sh
-make makemigrations
+make migrate
 ```
 5. Для запуска сервера используйте команду:
 ```sh
