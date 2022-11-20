@@ -31,7 +31,7 @@ class StationViewSet(viewsets.ModelViewSet):
 
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = StationListSerializer
-    queryset = Station.objects.order_by('id')
+    queryset = Station.objects.order_by("id")
 
     @extend_schema(
         description="Action returns state of single object selected by `id`.",
