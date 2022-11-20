@@ -1,6 +1,8 @@
 [![main](https://github.com/swankyalex/drf_rocshers_test_assignment/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/swankyalex/drf_rocshers_test_assignment/actions)
 [![Lines of code](https://img.shields.io/tokei/lines/github/swankyalex/drf_rocshers_test_assignment)](https://github.com/swankyalex/drf_rocshers_test_assignment/tree/master)
 
+![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
+
 #### Заданию было уделено ~12 часов. Покрытие кода тестами 100%
 
 # Тестовое задание
