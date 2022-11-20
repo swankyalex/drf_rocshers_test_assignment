@@ -90,3 +90,9 @@ docker-down:
 docker-build:
 	$(call log, running docker)
 	docker-compose up -d --build
+
+
+.PHONY: docker-su
+docker-su:
+	$(call log, running docker)
+	docker-compose exec web poetry run python src/manage.py createsuperuser
