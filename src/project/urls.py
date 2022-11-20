@@ -1,12 +1,14 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic import RedirectView
 from django.urls import include
 from django.urls import path
 from drf_spectacular.views import SpectacularAPIView
 from drf_spectacular.views import SpectacularSwaggerView
 
 urlpatterns = [
+    path("", RedirectView.as_view(url="/api/v1")),
     path("admin/", admin.site.urls),
     path("api/v1/", include("api.urls")),
     # spectacular doc urls

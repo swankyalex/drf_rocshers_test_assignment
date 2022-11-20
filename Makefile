@@ -74,3 +74,19 @@ cov:
 	$(call log, running tests)
 	$(RUN) pytest "$(DIR_SRC)" --cov
 
+
+.PHONY: docker-up
+docker-up:
+	$(call log, running docker)
+	docker-compose up -d
+
+.PHONY: docker-down
+docker-down:
+	$(call log, running docker)
+	docker-compose down
+
+
+.PHONY: docker-build
+docker-build:
+	$(call log, running docker)
+	docker-compose up -d --build
