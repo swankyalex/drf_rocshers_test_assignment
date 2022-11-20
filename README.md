@@ -83,7 +83,8 @@ poetry run pytest src # либо make test
 ```sh
 poetry run pytest src --cov # либо make cov
 ```
-![Test](https://i.ibb.co/dt8cvhX/Screenshot-from-2022-11-20-15-53-07.png)
+
+![Results](https://i.ibb.co/dt8cvhX/Screenshot-from-2022-11-20-15-53-07.png)
 
 ### Использование через docker (используется база данных PostgreSQL)
 1. Склонируйте данный репозиторий на свою локальную машину
