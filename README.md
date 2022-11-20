@@ -92,7 +92,7 @@ poetry run pytest src --cov # либо make cov
 1. Склонируйте данный репозиторий на свою локальную машину
 2. Выполните команду:
 ```sh
-docker-compose up -d
+docker-compose up
 ```
 либо
 ```sh

@@ -78,7 +78,7 @@ cov:
 .PHONY: docker-up
 docker-up:
 	$(call log, running docker)
-	docker-compose up -d
+	docker-compose up
 
 .PHONY: docker-down
 docker-down:
@@ -96,3 +96,11 @@ docker-build:
 docker-su:
 	$(call log, running docker)
 	docker-compose exec web poetry run python src/manage.py createsuperuser
+
+
+wait-for-db:
+	$(call log, waiting for DB up)
+	$(DIR_SCRIPTS)/wait_for_postgresql.sh \
+		$(shell $(PYTHON) $(DIR_SCRIPTS)/get_db_host.py) \
+		$(shell $(PYTHON) $(DIR_SCRIPTS)/get_db_port.py) \
+

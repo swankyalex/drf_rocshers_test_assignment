@@ -19,7 +19,7 @@ services:
     build: ./
     ports:
       - "8000:8000"
-    entrypoint: [make, migrate, static, run-prod]
+    entrypoint: [make, wait-for-db, migrate, static, run-prod]
     environment:
       ENV_FOR_DYNACONF: docker
     depends_on:
