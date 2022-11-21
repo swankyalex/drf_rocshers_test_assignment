@@ -3,6 +3,8 @@ from drf_spectacular.utils import extend_schema_view
 from rest_framework import permissions
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -29,6 +31,7 @@ from .serializers import StationStateSerializer
 class StationViewSet(viewsets.ModelViewSet):
     """CRUD of Station model"""
 
+    authentication_classes = (TokenAuthentication, SessionAuthentication)
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = StationListSerializer
     queryset = Station.objects.order_by("id")

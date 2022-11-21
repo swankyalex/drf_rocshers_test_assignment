@@ -1,12 +1,14 @@
 import pytest
 from api.models import Pointer
 from api.models import Station
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 @pytest.fixture
 def create_user(db):
-    return User.objects.create_user("user", "user@mail.com", "password")
+    return User.objects.create_user("user@mail.com", "user", "password")
 
 
 @pytest.fixture()
