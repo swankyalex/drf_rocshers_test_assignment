@@ -92,11 +92,11 @@ poetry run pytest src --cov # либо make cov
 1. Склонируйте данный репозиторий на свою локальную машину
 2. Выполните команду:
 ```sh
-docker-compose up
+docker-compose build
 ```
-либо
+затем
 ```sh
-make docker-up
+docker-compose up
 ```
 После окончания билда приложения перейдите на страницу http://127.0.0.1:8000/
 
