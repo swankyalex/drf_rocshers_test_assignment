@@ -10,7 +10,11 @@ from drf_spectacular.views import SpectacularSwaggerView
 urlpatterns = [
     path("", RedirectView.as_view(url="/api/v1")),
     path("admin/", admin.site.urls),
+    # main application url
     path("api/v1/", include("api.urls")),
+    # authorization and authentication urls
+    path("api/users/", include("user.urls")),
+    path("api-auth/", include("rest_framework.urls")),
     # spectacular doc urls
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(

@@ -21,9 +21,9 @@ ALLOWED_HOSTS = [
     _ds.HOST,
 ]
 
-PROJECT_APPS = ["api"]
+PROJECT_APPS = ["api", "user"]
 
-THIRD_PARTY_APPS = ["rest_framework", "drf_spectacular"]
+THIRD_PARTY_APPS = ["rest_framework", "drf_spectacular", "rest_framework.authtoken"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -127,3 +127,5 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
+
+AUTH_USER_MODEL = "user.UserProfile"
