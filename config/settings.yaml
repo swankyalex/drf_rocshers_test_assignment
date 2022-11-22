@@ -49,4 +49,5 @@ docker:
   WEB_CONCURRENCY: 2
   DATABASE_URL: "postgresql://postgres:12345678@space-db:5432/space-db"
   GUNICORN_LOGGING : "info"
+  SECRET_KEY : "1"
 
