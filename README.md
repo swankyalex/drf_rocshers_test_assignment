@@ -88,29 +88,26 @@ poetry install # или poetry install --with dev (для зависимосте
 ```sh
 poetry run python src/manage.py migrate
 ```
-либо
-```sh
-make migrate
-```
+
 5. Для запуска сервера используйте команду:
 ```sh
-poetry run python src/manage.py runserver # либо make run
+poetry run python src/manage.py runserver 
 ```
 
 6. Для авторизации создайте суперпользователя:
 ```sh
-poetry run python src/manage.py createsuperuser # либо make su
+poetry run python src/manage.py createsuperuser 
 ```
 либо зарегистрируйтесь по эндпойнту:
 **/api/users/profile/**
 
 7. Тестирование приложения происходит через pytest следующими командами:
 ```sh
-poetry run pytest src # либо make test
+poetry run pytest src 
 ```
 8. Покрытие кода тестами через coverage:
 ```sh
-poetry run pytest src --cov # либо make cov
+poetry run pytest src --cov 
 ```
 
 ![Results](https://i.ibb.co/dt8cvhX/Screenshot-from-2022-11-20-15-53-07.png)
@@ -119,17 +116,37 @@ poetry run pytest src --cov # либо make cov
 1. Склонируйте данный репозиторий на свою локальную машину
 2. Выполните команду:
 ```sh
-docker-compose build  /  make docker
+docker-compose build  
 ```
 затем
 ```sh
-docker-compose up / make docker-run
+docker-compose up 
 ```
 
 3. Для авторизации создайте суперпользователя одной из команд
 ```sh
-docker-compose exec web make su / make docker-su
+docker-compose exec web make su 
 ```
 
 либо зарегистрируйтесь по эндпойнту:
 **/api/users/profile/**
+
+## Доступные Make команды
+
+```
+make venv           Создание виртуального окружения (poetry install)
+make venv-dev       Создание виртуального окружения c dev зависимостями (poetry install --with dev)
+make run            Запуск локального сервера (python manage.py runserver)
+make run-prod       Запуск сервера через gunicorn
+make format         Форматирование кода через black, isort.
+make sh             Запуск django shell (python manage.py shell)
+make su             Создать суперпользователя (python manage.py createsuperuser)
+make migrations     Создание миграций (oython manage.py makemigrations)
+make migrate        Применение миграций (oython manage.py migrate)
+make static         Сбор статических файлов (python manage.py collectstatic)
+make test           Запуск тестов (pytest src)
+make cov            Запуск проверки покрытия кода тестами (pytest src --cov)
+make docker         Сборка образа (docker-compose build)
+make docker-run     Запуск контейнера (docker-compose up)
+make docker-clean   Очистка всех образов приложения
+```
