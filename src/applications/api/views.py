@@ -1,4 +1,3 @@
-from drf_spectacular.utils import extend_schema
 from drf_spectacular.utils import extend_schema_view
 from rest_framework import permissions
 from rest_framework import status
@@ -9,25 +8,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Station
+from .schema_extenders import extenders
 from .serializers import PointerSerializer
 from .serializers import StationListSerializer
 from .serializers import StationStateSerializer
 
 
-@extend_schema_view(
-    list=extend_schema(description="Returns all available stations."),
-    create=extend_schema(
-        description="Action expects the fields `name`, creates station and returns it."
-    ),
-    retrieve=extend_schema(
-        description="Action returns a single object selected by `id`."
-    ),
-    update=extend_schema(description="Update single object selected by `id`"),
-    partial_update=extend_schema(
-        description="Partial update single object selected by `id`"
-    ),
-    destroy=extend_schema(description="Delete single object selected by `id`"),
-)
+@extend_schema_view(**extenders)
 class StationViewSet(viewsets.ModelViewSet):
     """CRUD of Station model"""
 
@@ -36,27 +23,14 @@ class StationViewSet(viewsets.ModelViewSet):
     serializer_class = StationListSerializer
     queryset = Station.objects.order_by("id")
 
-    @extend_schema(
-        description="Action returns state of single object selected by `id`.",
-        methods=["GET"],
-        request=PointerSerializer,
-        responses=StationStateSerializer,
-    )
-    @extend_schema(
-        description="Action for updating state of object selected by `id`.",
-        methods=["POST"],
-        request=PointerSerializer,
-        responses=StationStateSerializer,
-    )
     @action(methods=["get", "post"], detail=True)
     def state(self, request, pk=None):
         """Additional action for pointer usage"""
         self.serializer_class = PointerSerializer
+        station = self.get_object()
         if request.method == "GET":
-            station = Station.objects.get(pk=pk)
             return Response(StationStateSerializer(station).data)
         elif request.method == "POST":
-            station = self.get_object()
             serializer = self.serializer_class(data=request.data)
             if serializer.is_valid():
                 distance = serializer.validated_data["distance"]
