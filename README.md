@@ -2,8 +2,17 @@
 [![Lines of code](https://img.shields.io/tokei/lines/github/swankyalex/drf_rocshers_test_assignment)](https://github.com/swankyalex/drf_rocshers_test_assignment/tree/master)
 
 ![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-orange?logo=python&logoColor=white&style=for-the-badge)&nbsp;
+![Pytest](https://img.shields.io/badge/-Pytest-9cf?logo=pytest&logoColor=white&style=for-the-badge)&nbsp;
+![Poetry](https://img.shields.io/badge/-poetry-purple?logo=poetry&style=for-the-badge&logoColor=white)&nbsp;
+![Django](https://img.shields.io/badge/-Django-green?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)
 
-#### Заданию было уделено ~14 часов. Покрытие кода тестами 100%
+![REST-API](https://img.shields.io/badge/-RestAPI-9cf?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
+![Docker](https://img.shields.io/badge/-Docker-blue?logo=docker&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&style=for-the-badge&logoColor=white)&nbsp; 
+![Gunicorn](https://img.shields.io/badge/-gunicorn-green?logo=gunicorn&style=for-the-badge&logoColor=white)&nbsp;
+
+#### Заданию было уделено ~15 часов. Покрытие кода тестами 100%
 
 # Тестовое задание
 
@@ -66,7 +75,7 @@ Python, Django, DRF, coverage, OpenAPI, Docker, Docker-compose, PostgreSQL.
 
 ### Документация
 
-На основе эндпоинтов генерируется swagger. 
+На основе эндпоинтов генерируется swagger через drf-spectacular. 
 
 # Использование
 ### Без docker (используется база данных SQlite)
@@ -93,6 +102,8 @@ poetry run python src/manage.py runserver # либо make run
 ```sh
 poetry run python src/manage.py createsuperuser # либо make su
 ```
+либо зарегистрируйтесь по эндпойнту:
+**/api/users/profile/**
 
 7. Тестирование приложения происходит через pytest следующими командами:
 ```sh
@@ -109,19 +120,17 @@ poetry run pytest src --cov # либо make cov
 1. Склонируйте данный репозиторий на свою локальную машину
 2. Выполните команду:
 ```sh
-docker-compose build
+docker-compose build  /  make docker
 ```
 затем
 ```sh
-docker-compose up
+docker-compose up / make docker-run
 ```
-После окончания билда приложения перейдите на страницу http://127.0.0.1:8000/
 
 3. Для авторизации создайте суперпользователя одной из команд
 ```sh
-docker-compose exec web make su
+docker-compose exec web make su / make docker-su
 ```
-либо
-```sh
-make docker-su
-```
+
+либо зарегистрируйтесь по эндпойнту:
+**/api/users/profile/**
