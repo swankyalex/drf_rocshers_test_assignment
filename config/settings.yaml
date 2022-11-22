@@ -30,6 +30,7 @@ development:
   WEB_CONCURRENCY: 2
   SECRET_KEY: "1"
   DATABASE_URL: "sqlite:///src/db.sqlite3"
+  GUNICORN_LOGGING : "debug"
 
 
 ci:
@@ -42,6 +43,10 @@ ci:
 
 
 docker:
+  HOST: "0.0.0.0"
   MODE_DEBUG: false
+  PORT: 8000
+  WEB_CONCURRENCY: 2
   DATABASE_URL: "postgresql://postgres:12345678@space-db:5432/space-db"
+  GUNICORN_LOGGING : "info"
 
