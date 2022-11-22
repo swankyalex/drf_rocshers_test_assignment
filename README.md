@@ -141,8 +141,8 @@ make run-prod       Запуск сервера через gunicorn
 make format         Форматирование кода через black, isort.
 make sh             Запуск django shell (python manage.py shell)
 make su             Создать суперпользователя (python manage.py createsuperuser)
-make migrations     Создание миграций (oython manage.py makemigrations)
-make migrate        Применение миграций (oython manage.py migrate)
+make migrations     Создание миграций (python manage.py makemigrations)
+make migrate        Применение миграций (python manage.py migrate)
 make static         Сбор статических файлов (python manage.py collectstatic)
 make test           Запуск тестов (pytest src)
 make cov            Запуск проверки покрытия кода тестами (pytest src --cov)
