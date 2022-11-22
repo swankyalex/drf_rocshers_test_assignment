@@ -5,8 +5,7 @@
 ![Python](https://img.shields.io/badge/-Python-orange?logo=python&logoColor=white&style=for-the-badge)&nbsp;
 ![Pytest](https://img.shields.io/badge/-Pytest-9cf?logo=pytest&logoColor=white&style=for-the-badge)&nbsp;
 ![Poetry](https://img.shields.io/badge/-poetry-purple?logo=poetry&style=for-the-badge&logoColor=white)&nbsp;
-![Django](https://img.shields.io/badge/-Django-green?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)
-
+![Django](https://img.shields.io/badge/-Django-green?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
 ![REST-API](https://img.shields.io/badge/-RestAPI-9cf?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
 ![Docker](https://img.shields.io/badge/-Docker-blue?logo=docker&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&style=for-the-badge&logoColor=white)&nbsp; 
