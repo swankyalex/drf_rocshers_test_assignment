@@ -1,4 +1,5 @@
 from urllib.parse import urlsplit
+
 from utils import get_setting
 
 

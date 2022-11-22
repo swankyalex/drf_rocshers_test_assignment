@@ -24,6 +24,7 @@ endif
 DIR_SCRIPTS = $(DIR_REPO)/scripts
 DIR_SRC := $(DIR_REPO)/src
 DIR_TESTS := $(DIR_REPO)/tests
+WSGI_APPLICATION := project.wsgi:application
 
 # -----------------------------------------------
 # Virtualenv-depend variables

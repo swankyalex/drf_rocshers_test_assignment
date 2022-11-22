@@ -4,8 +4,8 @@ include ./Makefile.in.mk
 .PHONY: format
 format:
 	$(call log, reorganizing imports & formatting code)
-	$(RUN) isort "$(DIR_SRC)"
-	$(RUN) black "$(DIR_SRC)"
+	$(RUN) isort "$(DIR_SRC)" "$(DIR_SCRIPTS)"
+	$(RUN) black "$(DIR_SRC)" "$(DIR_SCRIPTS)"
 	$(RUN) flake8 "$(DIR_SRC)"
 	$(call log, All good!)
 
@@ -15,10 +15,11 @@ run:
 	$(call log, starting local web server)
 	$(PYTHON) src/manage.py runserver
 
+
 .PHONY: run-prod
 run-prod:
 	$(call log, starting local web server)
-	$(PYTHON) src/manage.py runserver 0.0.0.0:8000
+	$(RUN) gunicorn --config="$(DIR_SCRIPTS)/gunicorn.conf.py" $(WSGI_APPLICATION)
 
 
 .PHONY: sh
@@ -75,21 +76,22 @@ cov:
 	$(RUN) pytest "$(DIR_SRC)" --cov
 
 
-.PHONY: docker-up
-docker-up:
-	$(call log, running docker)
+.PHONY: docker
+docker:
+	docker-compose build
+
+
+.PHONY: docker-run
+docker-run:
 	docker-compose up
 
-.PHONY: docker-down
-docker-down:
-	$(call log, running docker)
-	docker-compose down
 
-
-.PHONY: docker-build
-docker-build:
-	$(call log, running docker)
-	docker-compose up -d --build
+.PHONY: docker-clean
+docker-clean:
+	docker-compose stop || true
+	docker-compose down || true
+	docker-compose rm --force || true
+	docker system prune --force
 
 
 .PHONY: docker-su
