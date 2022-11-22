@@ -1,15 +1,15 @@
 [![main](https://github.com/swankyalex/drf_rocshers_test_assignment/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/swankyalex/drf_rocshers_test_assignment/actions)
 [![Lines of code](https://img.shields.io/tokei/lines/github/swankyalex/drf_rocshers_test_assignment)](https://github.com/swankyalex/drf_rocshers_test_assignment/tree/master)
 
-![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-orange?logo=python&logoColor=white&style=for-the-badge)&nbsp;
-![Pytest](https://img.shields.io/badge/-Pytest-9cf?logo=pytest&logoColor=white&style=for-the-badge)&nbsp;
-![Poetry](https://img.shields.io/badge/-poetry-purple?logo=poetry&style=for-the-badge&logoColor=white)&nbsp;
-![Django](https://img.shields.io/badge/-Django-green?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
-![REST-API](https://img.shields.io/badge/-RestAPI-9cf?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
-![Docker](https://img.shields.io/badge/-Docker-blue?logo=docker&style=for-the-badge&url=https://www.djangoproject.com/)&nbsp;
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&style=for-the-badge&logoColor=white)&nbsp; 
-![Gunicorn](https://img.shields.io/badge/-gunicorn-green?logo=gunicorn&style=for-the-badge&logoColor=white)&nbsp;
+[![Make](https://img.shields.io/badge/Make-%23008FBA.svg?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/software/make/)
+[![Python](https://img.shields.io/badge/-Python-orange?logo=python&logoColor=white&style=for-the-badge)](https://www.python.org/)&nbsp;
+[![Pytest](https://img.shields.io/badge/-Pytest-9cf?logo=pytest&logoColor=white&style=for-the-badge)](https://docs.pytest.org/en/7.2.x/)&nbsp;
+[![Poetry](https://img.shields.io/badge/-poetry-purple?logo=poetry&style=for-the-badge&logoColor=white)](https://python-poetry.org/)&nbsp;
+[![Django](https://img.shields.io/badge/-Django-green?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)](https://www.djangoproject.com/)&nbsp;
+[![REST-API](https://img.shields.io/badge/-RestAPI-9cf?logo=django&style=for-the-badge&url=https://www.djangoproject.com/)](https://www.django-rest-framework.org/)&nbsp;
+[![Docker](https://img.shields.io/badge/-Docker-blue?logo=docker&style=for-the-badge&url=https://www.djangoproject.com/)](https://www.docker.com/)&nbsp;
+[![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&style=for-the-badge&logoColor=white)](https://postgresql.org)&nbsp; 
+[![Gunicorn](https://img.shields.io/badge/-gunicorn-green?logo=gunicorn&style=for-the-badge&logoColor=white)](https://gunicorn.org/)&nbsp;
 
 #### Заданию было уделено ~15 часов. Покрытие кода тестами 100%
 
