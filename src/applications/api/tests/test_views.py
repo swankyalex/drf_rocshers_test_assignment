@@ -4,17 +4,23 @@ from django.urls import reverse
 
 
 @pytest.mark.django_db
-def test_views_statuses(create_station, client):
+@pytest.mark.parametrize(
+    "url_name, status_code",
+    [
+        ("station-list", 200),
+        ("station-detail", 200),
+        ("station-state", 200),
+    ],
+)
+def test_views_statuses(create_station, client, url_name, status_code):
     station_id = Station.objects.last().id
-    url_1 = reverse("station-list")
-    url_2 = reverse("station-detail", kwargs={"pk": station_id})
-    url_3 = reverse("station-state", kwargs={"pk": station_id})
-    response_1 = client.get(url_1)
-    response_2 = client.get(url_2)
-    response_3 = client.get(url_3)
-    assert response_1.status_code == 200
-    assert response_2.status_code == 200
-    assert response_3.status_code == 200
+    if url_name == "station-list":
+        url = reverse(url_name)
+    else:
+        url = reverse(url_name, kwargs={"pk": station_id})
+    response = client.get(url)
+
+    assert response.status_code == status_code
 
 
 @pytest.mark.django_db
