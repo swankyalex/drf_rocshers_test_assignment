@@ -1,3 +1,7 @@
+### https://swankyaleks-spaceships.onrender.com/
+
+
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/jnet.svg)](https://betteruptime.com/?utm_source=status_badge)
 [![main](https://github.com/swankyalex/drf_rocshers_test_assignment/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/swankyalex/drf_rocshers_test_assignment/actions)
 [![Lines of code](https://img.shields.io/tokei/lines/github/swankyalex/drf_rocshers_test_assignment)](https://github.com/swankyalex/drf_rocshers_test_assignment/tree/master)
 
